@@ -64,6 +64,8 @@
 
 <h2> Importando as folhas de estilo (Css) do Bootstrap Icons e da ferramenta Light Box 2: </h2>
 
-<p>Já instalamos as dependências para utilizarmos o Bootstrap Icons e o Light Box 2, mas para que eles funcionem no nosso projeto precisamos importá-los para o projeto, fazemos isso adicionando uma tag link para cada uma das importações no nosso arquivo <b>"Layout.cshtml"</b> dentro da tag <b>"head"</b> onde está configurado os demais links de Css da aplicação. Com o arquivo aberto adicione as seguintes linhas de código ao arquivo para importar o css das ferramentas: </p>
+<p>Já instalamos as dependências para utilizarmos o Bootstrap Icons e o Light Box 2, mas para que eles funcionem no nosso projeto precisamos importá-los para o projeto, fazemos isso adicionando uma tag link para cada uma das importações no nosso arquivo <b>"Layout.cshtml"</b> dentro da tag <b>"head"</b> onde está configurado os demais links de Css da aplicação. Com o arquivo aberto crie duas tags <b>"link"</b> e passe os seguintes caminhos no <b>" href="" "</b>: </p>
 
-<span><b>Link de Css para o Bootstrap Icons: </b> <link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css" asp-append-version="true" /></span>
+<span><b>Link de Css para o Bootstrap Icons: </b> href="/lib/bootstrap-icons/font/bootstrap-icons.min.css" </span>
+
+<span><b>Link de Css para o Light Box 2: </b> href="/lib/lightbox2/css/lightbox.min.css" </span>
