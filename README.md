@@ -12,32 +12,50 @@
 
 <b><h2>:floppy_disk:  Instalando dependências do Libman: </h2></b>
 
-<p>* Cole no Terminal: dotnet tool install -g Microsoft.Web.LibraryManager.Cli </p>
+<span> <b>Cole no Terminal: </b>dotnet tool install -g Microsoft.Web.LibraryManager.Cli </span>
 
 <b><h2>:floppy_disk:  Instalando dependências do Bootstrap Icons: </h2></b>
 
-<p>* Cole no Terminal: libman install bootstrap-icons </p>
+<span><b>Cole no Terminal: </b>libman install bootstrap-icons </span>
 
 <b><h2>:floppy_disk:  Instalando dependências do LightBox 2: </h2></b>
 
-<p>* Cole no Terminal: libman install lightbox2 </p>
+<span><b>Cole no Terminal: </b>libman install lightbox2 </span>
 
 <b><h2>:floppy_disk:  Instalando dependências do Image Sharp: </h2></b>
 
-<p>* Cole no Terminal: dotnet add package SixLabors.ImageSharp </p>
+<span><b>Cole no Terminal: </b>dotnet add package SixLabors.ImageSharp </span>
 
-<p>* Cole no Terminal: dotnet add package SixLabors.ImageSharp.Web </p>
+<span><b>Cole no Terminal: </b>dotnet add package SixLabors.ImageSharp.Web </span>
+
+<b><h2>:floppy_disk:  Instalando o Serilog (Sistema de Logs que iremos utilizar na aplicação): </h2></b>
+
+<span><b>Cole no Terminal: </b>dotnet add package Serilog.Extensions.Logging.File </span>
 
 <b><h2>:floppy_disk:  Instalando Entity Framework Core: </h2></b>
 
-<p>* Cole no Terminal: dotnet tool install --global dotnet-ef --version 3.0.0 </p>
+<span><b>Cole no Terminal: </b>dotnet tool install --global dotnet-ef --version 3.0.0 </span>
 
 <b><h2>:floppy_disk:  Instalando pacotes de dependências para utilizar banco de dados MySql: </h2></b>
 
-<p>* Cole no Terminal: dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.0.0 </p>
+<span><b>Cole no Terminal: </b>dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.0.0 </span>
 
-<<<<<<< HEAD
-<p>* Cole no Terminal: dotnet add package Pomelo.EntityFrameworkCore.Design --version 3.0.0 </p>
-=======
-<p>* Cole no Terminal: dotnet add package Pomelo.EntityFrameworkCore.Design --version 3.0.0 </p>
->>>>>>> 127fea2d5827bccdff13965898119c2fac45678d
+<h1> Configurações do Projeto</h1>
+
+<p> Com todas as ferramentas e suas dependências devidamente instaladas podemos prossegui para a configuração essencial do projeto, para isso precisamos seguir alguns passos que são primordias para que tudo funcione corretamente. Então vamos lá</p>
+
+<h2>Estruturando o projeto</h2>
+
+<p>Nosso projeto foi criado na estrutura MVC contendo as pastas Models, Viewa e Controllers, mas ainda precisamos implementar mais três pastas para organizar nosso projeto a fim de deixá-lo mais bem estruturado. A primeira pasta que precisamos é a que irá conter nosso modelo de contexto para o banco de dados, para isso crie a pasta "Data" (sem aspas) digitando o seguinte comando no seu terminal já estando dentro do diretório do projeto: </p>
+
+<span><b>Cole no Terminal: </b>mkdir Data</span>
+
+<p>Agora precisamos cirar nosso diretório de serviços, para isso digite ou cole o seguinte comando no seu terminal já estando dentro do diretório do projeto</p>
+
+<span><b>Cole no Terminal: </b>mkdir Services</span>
+
+<p>Para finalizarmos com os diretórios iremos ainda precisar de um diretório para armazenar as imagens que iremos fazer upload, existem maneiras de se configurar o projeto para que gere esse diretório de forma dinâmica criando métodos específicos para essa geração, porém para encurtarmos mais os passos iremos cirar esse diretório de maneira manual. Precisamos saber que toda a manipulação de imagens será voltado para o diretório raiz de armazenamento de arquivos de esilização do nosso projeto, que por padrão em uma estrutura MVC é atribuído ao diretório <b>wwwroot</b>. Sabendo disso iremos acessar a pasta <b>wwwroot</b> dentro do nosso projeto e já dentro da pasta podemos criar nosso diretório que recebrá as imagens via Upload.</p>
+
+<span><b>Acesse o diretório wwwroot: </b>cd wwwroot</span>
+
+<span><b>Cole no Terminal dentro do diretório wwwroot: </b>mkdir Images</span>
