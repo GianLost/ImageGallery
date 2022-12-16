@@ -36,4 +36,8 @@
 
 <p>* Cole no Terminal: dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.0.0 </p>
 
+<<<<<<< HEAD
 <p>* Cole no Terminal: dotnet add package Pomelo.EntityFrameworkCore.Design --version 3.0.0 </p>
+=======
+<p>* Cole no Terminal: dotnet add package Pomelo.EntityFrameworkCore.Design --version 3.0.0 </p>
+>>>>>>> 127fea2d5827bccdff13965898119c2fac45678d
