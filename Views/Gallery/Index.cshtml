@@ -1,0 +1,54 @@
+@model IEnumerable<Gallery>
+
+@{
+    ViewData["Title"] = "Galeria de Imagens";
+}
+
+
+<div class="mt-5 p-2">
+
+    <a asp-action="Register" class="btn btn-outline-dark mt-4 mb-4"><i class="bi bi-image-alt"></i> Nova Galeria</a>
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-responsive table-bordered table-striped table-dark tabela-galerias">
+
+            <thead>
+
+                <tr>
+
+                    <th>@Html.DisplayNameFor(m => m.IdGallery)</th>
+                    <th>@Html.DisplayNameFor(m => m.Title)</th>
+                    <th>Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.IdGallery.ToString("D6")</td>
+                        <td>@item.Title</td>
+                        <td>
+                            <a asp-action="Index" asp-controller="Image" class="btn btn-sm btn-outline-success"
+                        asp-route-id="@item.IdGallery"><i class="bi bi-images" title="Imagens da galeria"></i></a>
+                            <a asp-action="Upgrade" class="btn btn-sm btn-outline-secondary" asp-route-id="@item.IdGallery"><i
+                            class="bi bi-pencil" title="Alterar galeria"></i></a>
+                            <a asp-action="Delete" class="btn btn-sm btn-outline-danger" asp-route-id="@item.IdGallery"><i
+                            class="bi bi-trash" title="Excluir galeria"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            Nenhuma galeria cadastrada.
+        </div>
+    }
+</div>

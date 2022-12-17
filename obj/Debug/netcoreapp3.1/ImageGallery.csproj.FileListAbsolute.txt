@@ -58,3 +58,7 @@ C:\Users\Ufo\Desktop\ImageGallery\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Ufo\Desktop\ImageGallery\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Ufo\Desktop\ImageGallery\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 C:\Users\Ufo\Desktop\ImageGallery\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Index.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Register.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Upgrade.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Delete.cshtml.g.cs

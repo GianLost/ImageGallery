@@ -1,0 +1,27 @@
+@model Gallery
+
+@{
+    ViewData["Title"] = "Cadastro de Galerias de Imagem";
+}
+
+<div class="mt-4 p-2">
+
+    <form method="post">
+
+        <div class="form-group mt-5">
+
+            <input class="form-control" placeholder="Cadastrar Galeria" asp-for="@Model.Title" />
+            <span class="text-danger" asp-validation-for="@Model.Title"></span>
+
+        </div>
+
+        <div class="mt-3">
+
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            <button class="btn btn-primary" type="submit">Salvar</button>
+
+        </div>
+
+    </form>
+
+</div>

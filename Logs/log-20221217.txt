@@ -1,0 +1,1 @@
+2022-12-17T15:50:08.0385379-03:00 0HMN0BU0FJM4U:00000003 [ERR] Erro ao Exibir Galeria de Imagem !Unable to connect to any of the specified MySQL hosts. (a924d4d4)

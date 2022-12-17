@@ -1,0 +1,10 @@
+.tabela-galerias tr>th:first-child,
+.tabela-galerias tr>td:first-child,
+.tabela-galerias tr>th:last-child,
+.tabela-galerias tr>td:last-child
+{
+  width: 1%;
+  white-space: nowrap;
+  text-align: center;
+
+}

@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    
+    <link rel="stylesheet" href="~/css/styleGallery.css" asp-append-version="true" />
 
     <!-- Link de implementação do css da biblioteca de ícones do bootstrap (Bootstrap Icons) -->
     <link rel="stylesheet" href="/lib/bootstrap-icons/font/bootstrap-icons.min.css" asp-append-version="true" />
@@ -25,7 +27,7 @@
 
     <header>
 
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
 
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ImageGallery</a>
@@ -39,17 +41,17 @@
 
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
 
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav ml-auto mr-5 text-center">
 
                         <li class="nav-item">
 
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-fill"></i> Home</a>
 
                         </li>
 
                         <li class="nav-item">
 
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-file-earmark-image-fill"></i> Galerias</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Gallery" asp-action="Index"><i class="bi bi-file-earmark-image-fill"></i> Galerias</a>
 
                         </li>
 
@@ -72,7 +74,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted text-center">
 
         <div class="container">
 

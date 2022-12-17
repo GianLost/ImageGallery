@@ -1,0 +1,23 @@
+@model Gallery
+@{
+    ViewData["Title"] = "Exclusão de Galeria de Imagens";
+}
+
+<div class="mt-5 p-5">
+
+    <form method="post">
+
+        <input type="hidden" asp-for="@Model.IdGallery">
+
+        <div class="mt-3">
+            <h4>Tem certeza que deseja excluir a galeria <b>@Model.Title</b>?</h4>
+        </div>
+
+        <div class="mt-3">
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            <button class="btn btn-danger" type="submit">Excluir</button>
+        </div>
+
+    </form>
+
+</div>
