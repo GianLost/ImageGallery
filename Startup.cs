@@ -1,5 +1,6 @@
 using System;
 using ImageGallery.Services;
+using ImageGallery.DataBase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
