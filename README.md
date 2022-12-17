@@ -2,11 +2,11 @@
 
 </br>
 
-<p> Neste exemplos iremos utilizar algumas bibliotecas para facilitar a implementação de recursos dentro da aplicação, para isso será necessário instalar suas dependências. Então apenas recaptulando precisamos gerar um projeto em Asp .Net Core MVC utilizando o seguinte comando no terminal do seu ambiente de desenvolvimento: </p>
+<p> Neste exemplo iremos utilizar algumas bibliotecas para facilitar a implementação de recursos dentro da aplicação, para isso será necessário instalar suas dependências. Então apenas recaptulando precisamos gerar um projeto em Asp .Net Core MVC utilizando o seguinte comando no terminal do seu ambiente de desenvolvimento: </p>
 
 <b><p> dotnet new mvc --no-https --framework netcoreapp3.1 </p></b>
 
-<p>(Lembrando que esse projeto será desenvolvido utilizando a versão 3.1 SDK do dotnet core, adeque o comando de acordo com suas necessidades)</p>
+<p>(Lembrando que esse projeto será desenvolvido utilizando a versão 3.1 do SDK dotnet core, adeque o comando de acordo com suas necessidades)</p>
 
 <p> Com o projeto gerado podemos prosseguir, dando seguimento precisamos instalar as dependências das ferramentas que iremos utilizar:</p>
 
@@ -39,10 +39,11 @@
 <b><h2>:floppy_disk:  Instalando pacotes de dependências para utilizar banco de dados MySql: </h2></b>
 
 <span><b>Cole no Terminal: </b> dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.0.0 </span>
+<span><b>Cole no Terminal: </b> dotnet add package Pomelo.EntityFrameworkCore.Design --version 3.0.0 </span>
 
 <h1> Configurações do Projeto</h1>
 
-<p> Com todas as ferramentas e suas dependências devidamente instaladas podemos prossegui para a configuração essencial do projeto, para isso precisamos seguir alguns passos que são primordias para que tudo funcione corretamente. Então vamos lá</p>
+<p> Com todas as ferramentas e suas dependências devidamente instaladas podemos prosseguir para a configuração essencial do projeto, para isso precisamos seguir alguns passos que são primordias para que tudo funcione corretamente. Então vamos lá</p>
 
 <h2>Estruturando o projeto</h2>
 
@@ -54,7 +55,7 @@
 
 <span><b>Cole no Terminal: </b> mkdir Services</span>
 
-<p>Para finalizarmos com os diretórios iremos ainda precisar de um diretório para armazenar as imagens que iremos fazer upload, existem maneiras de se configurar o projeto para que gere esse diretório de forma dinâmica criando métodos específicos para essa geração, porém para encurtarmos mais os passos iremos cirar esse diretório de maneira manual. Precisamos saber que toda a manipulação de imagens será voltado para o diretório raiz de armazenamento de arquivos de esilização do nosso projeto, que por padrão em uma estrutura MVC é atribuído ao diretório <b>wwwroot</b>. Sabendo disso iremos acessar a pasta <b>wwwroot</b> dentro do nosso projeto e já dentro da pasta podemos criar nosso diretório que recebrá as imagens via Upload.</p>
+<p>Para finalizarmos com os diretórios iremos ainda precisar de um diretório para armazenar as imagens que iremos fazer upload, existem maneiras de se configurar o projeto para gerar esse diretório de forma dinâmica criando métodos específicos para essa geração, porém para encurtarmos mais os passos iremos cirar esse diretório de maneira manual. Precisamos saber que toda a manipulação de imagens será voltado para o diretório raiz de armazenamento de arquivos de esilização do nosso projeto, que por padrão em uma estrutura MVC é atribuído ao diretório <b>wwwroot</b>. Sabendo disso iremos acessar a pasta <b>wwwroot</b> dentro do nosso projeto e já dentro da pasta podemos criar nosso diretório que recebrá as imagens via Upload.</p>
 
 <span><b>Acesse o diretório wwwroot: </b> cd wwwroot</span>
 
@@ -69,3 +70,19 @@
 <span><b>Link de Css para o Bootstrap Icons: </b> href="/lib/bootstrap-icons/font/bootstrap-icons.min.css" </span>
 
 <span><b>Link de Css para o Light Box 2: </b> href="/lib/lightbox2/css/lightbox.min.css" </span>
+
+<h2> Importando os arquivos JavaScript para utilizar a ferramenta Light Box 2: </h2>
+
+<p>Ainda dentro do nosso arquivo <b>"Layout.cshtml"</b> precisamos passar a tag <b>"script"</b> que dará acesso aos arquivos JavaScript do light box 2, então vá até a linha anterior à linha de fechamento da sua tag body, ou na parte do seu código onde você está chamando pelos seus arquivos JavaScript e copie ou cole a seguinte referência dentro do parâmetro source de uma nova tag <b>"script"</b>: </p>
+
+<span><b>Importando arquivos JavaScript do Light Box 2:</b> src="/lib/lightbox2/js/lightbox-plus-jquery.min.js" </span>
+
+<p>Essas são todas as alterações que precisamos para o nosso arquivo <b>"Layout.cshtml"</b>, agora dando continuidade as configurações do nosso projeto precisamos criar três classes que implementarão nossos serviços de manipulação com imagens. Para que você tenha um maior auxílio você pode fazer o <b>"git clone"</b> deste repositório e conferir os arquivos que serão citados aqui para que compreenda as alterações, ou simplesmente abrir estes arquivos pelo repositório remoto (todas as implementações de código estarão comentadas para um melhor entendimento).</p>
+
+<h2> Configurações da Classe <b>Startup.cs</b> </h2>
+
+<p>Depois de clonar o repositório ou acessá-lo remotamente confira na classe <b>Startup.cs</b> as alterações necessárias no arquivo e as implemente de acordo com sua necessidade, basicamente nesta classe configuramos o uso de sessão e cookies e também as requisições feitas via protocolo Http já que não utilizaremos o Https aqui, ainda dentro da calsse Startup.cs configuramos também o uso do ImageSharp, a ferramenta que utilizaremos para manipulação das imagens. Após as configurações na interface de configuração adicionamos o uso delas ao Pipeline da aplicação. Verifique adequadamente as implementações na classe Startup.cs e adeque-as ao seu uso.</p>
+
+<h2> Criando as Classes de serviço </h2>
+
+<p>Com as nossas configurações finalizadas agora podemos partir para a implementação das nossas Classes de serviço. Para isso utilizaremos de três Classes</p>

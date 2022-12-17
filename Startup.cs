@@ -26,6 +26,7 @@ namespace ImageGallery
         [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
+            // implementações para configuração do uso de sessão
             services.Configure<CookiePolicyOptions>(options =>
                 {
                     options.CheckConsentNeeded = context => false;
@@ -35,6 +36,7 @@ namespace ImageGallery
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddMemoryCache();
             services.AddSession();
+
             services.AddImageSharp(
                 //Este método configura o ImageSharp para ser implementado de acordo com os recursos necessários
                 options =>
@@ -46,6 +48,7 @@ namespace ImageGallery
                 {
                     options.CacheFolder = "img/cache"; // Configura a pasta que armazenará as imagens em cache
                 });
+
             services.AddSingleton<IFileProcessor, FileProcessorService>(); //Adicionando a interface que Implementamos para a manipulação das imgens de upload
 
         }
@@ -85,15 +88,15 @@ namespace ImageGallery
 
             app.UseSession();
 
-            //Aplicando o uso do Image Sharp ao Pipeline da aplicação
-            app.UseImageSharp();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            //Aplicando o uso do Image Sharp ao Pipeline da aplicação
+            app.UseImageSharp();
 
             //Aplicando sistema de geração de Logs através da ferramenta Serilog.Extensions.Logging.File
             logFac.AddFile("Logs/log-{Date}.txt", LogLevel.Error);

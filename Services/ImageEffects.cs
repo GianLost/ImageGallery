@@ -10,6 +10,6 @@ namespace ImageGallery.Services
         RotateLeftEffect, // Efeito Rotacionar para Esquerda
         RotateRightEffect, // Efeito Rotacionar para Direita
         FlipHorizontallyEffect, // Efeito Inverter Horizontalmente
-        InverterVertical // Efeito Inverter Verticalmente
+        FlipVerticallyEffect // Efeito Inverter Verticalmente
     }
 }
