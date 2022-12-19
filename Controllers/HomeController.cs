@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using ImageGallery.DataBase;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,13 +18,24 @@ namespace ImageGallery.Controllers
 
         public IActionResult Index()
         {
-            using (GalleryContext dataBase = new GalleryContext())
+            try
             {
-                var gallery = dataBase.Galerias.Include(gallery => gallery.Images).AsNoTracking().ToList();
-                return View(gallery);
+                using (GalleryContext dataBase = new GalleryContext())
+                {
+                    var gallery =
+                        dataBase
+                            .Galerias
+                            .Include(gallery => gallery.Images)
+                            .AsNoTracking()
+                            .ToList();
+                    return View(gallery);
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("Erro ao Vitrine de Imagens !" + e.Message);
+                return RedirectToAction("Index", "Home");
             }
         }
-
-
     }
 }
