@@ -20,7 +20,6 @@ namespace ImageGallery.Models
         public Gallery Gallery { get; set; } // objeto galeria que será nossa chave estrangeira para o relacionamento de tabelas.
 
         [NotMapped, Required(ErrorMessage = "A imagem não pôde ser enviada")]
-
         [Display(Name = "Image File")]
         public IFormFile ImageFile { get; set; } // o arquivo de imagem não será mapeado em nossas migrações para o banco de dados uma vez que utilizaremos o sistema de carregamento de arquivos em stream para recuperarmos os arquivos da memória não precisamos salvar o arquivo em si no nosso banco para fins de melhoria de permorfarmance se tratando do banco de dados, para isso salvamos apenas o seu diretório original, e demais propriedades para que possamos recuperar o arquivo em memória apenas pela sua rota na aplicação.
         
