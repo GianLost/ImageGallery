@@ -47,8 +47,15 @@ using ImageGallery.DataBase;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\Ufo\Desktop\ImageGallery\Views\_ViewImports.cshtml"
+using ImageGallery.Migrations;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7452b9089334bf07dc6abbb356524100dd6ae778", @"/Views/Image/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"decd7701cce52e175bfc748b4aec0a99d58d6f28", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a0a6893e65cb3fdbac9639758049cc99a7b3513d", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Image_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<Image>>
     #nullable disable
@@ -108,7 +115,7 @@ using ImageGallery.DataBase;
 #line hidden
 #nullable disable
             WriteLiteral("</b>.</h1>\r\n\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7452b9089334bf07dc6abbb356524100dd6ae7787620", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7452b9089334bf07dc6abbb356524100dd6ae7787792", async() => {
                 WriteLiteral("<i\r\n            class=\"bi bi-image-alt mt-2 mb-3\"></i> Nova Imagem");
             }
             );
@@ -225,7 +232,7 @@ WriteAttributeValue("", 1176, $"{item.imagePath}?{DateTime.Now.ToLocalTime()}", 
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n\r\n                        <td>\r\n\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7452b9089334bf07dc6abbb356524100dd6ae77813239", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7452b9089334bf07dc6abbb356524100dd6ae77813411", async() => {
                 WriteLiteral("<i class=\"bi bi-magic\"></i>");
             }
             );
@@ -260,7 +267,7 @@ WriteAttributeValue("", 1176, $"{item.imagePath}?{DateTime.Now.ToLocalTime()}", 
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7452b9089334bf07dc6abbb356524100dd6ae77815843", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7452b9089334bf07dc6abbb356524100dd6ae77816015", async() => {
                 WriteLiteral("<i class=\"bi bi-pencil\"></i>");
             }
             );
@@ -336,7 +343,7 @@ WriteAttributeValue("", 2450, item.IdImage, 2450, 13, false);
                                 <div class=""modal-body p-0"">
 
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7452b9089334bf07dc6abbb356524100dd6ae77820477", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7452b9089334bf07dc6abbb356524100dd6ae77820649", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

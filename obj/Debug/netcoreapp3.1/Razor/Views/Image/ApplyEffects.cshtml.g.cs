@@ -47,8 +47,15 @@ using ImageGallery.DataBase;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "C:\Users\Ufo\Desktop\ImageGallery\Views\_ViewImports.cshtml"
+using ImageGallery.Migrations;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7da64606f6c2d119b64d9b48dd8cf2c72e83f35a", @"/Views/Image/ApplyEffects.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"decd7701cce52e175bfc748b4aec0a99d58d6f28", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a0a6893e65cb3fdbac9639758049cc99a7b3513d", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Image_ApplyEffects : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Image>
     #nullable disable
@@ -111,7 +118,7 @@ using ImageGallery.DataBase;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a11496", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a11668", async() => {
                 WriteLiteral("\r\n\r\n    <input type=\"hidden\" name=\"id\"");
                 BeginWriteAttribute("value", " value=\"", 162, "\"", 184, 1);
 #nullable restore
@@ -133,7 +140,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
 #nullable disable
                 EndWriteAttribute();
                 WriteLiteral(" class=\"img-thumbnail\" width=\"300\" id=\"currentImage\">\r\n    </div>\r\n\r\n    <div class=\"form-group mt-3\">\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a12710", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a12882", async() => {
                     WriteLiteral("<i class=\"bi bi-arrow-clockwise\"></i>");
                 }
                 );
@@ -157,7 +164,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a14726", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a14898", async() => {
                     WriteLiteral("<i class=\"bi bi-arrow-counterclockwise\"></i>");
                 }
                 );
@@ -181,7 +188,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a16749", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a16921", async() => {
                     WriteLiteral("<i class=\"bi bi-arrow-left-right\"></i>");
                 }
                 );
@@ -205,7 +212,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a18766", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a18938", async() => {
                     WriteLiteral("<i class=\"bi bi-arrow-down-up\"></i>");
                 }
                 );
@@ -229,7 +236,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a20780", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a20952", async() => {
                     WriteLiteral("<i\r\n                class=\"bi bi-image-alt\"></i>");
                 }
                 );
@@ -253,7 +260,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a22813", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a22985", async() => {
                     WriteLiteral("<i\r\n                class=\"bi bi-funnel\"></i>");
                 }
                 );
@@ -277,7 +284,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a24843", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a25015", async() => {
                     WriteLiteral("<i\r\n                class=\"bi bi-file-image-fill\"></i>");
                 }
                 );
@@ -301,7 +308,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a26882", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a27054", async() => {
                     WriteLiteral("<i\r\n                class=\"bi bi-eraser\"></i>");
                 }
                 );
@@ -325,7 +332,7 @@ WriteAttributeValue("", 245, Model.imagePath, 245, 16, false);
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n\r\n    </div>\r\n\r\n    <div class=\"form-group mt-3\">\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a28969", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7da64606f6c2d119b64d9b48dd8cf2c72e83f35a29141", async() => {
                     WriteLiteral("Voltar para a Galeria");
                 }
                 );
