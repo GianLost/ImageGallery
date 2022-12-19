@@ -2,11 +2,16 @@
 
 @{
     ViewData["Title"] = "Galeria de Imagens";
-    Gallery gallery = new Gallery();
+
+    Gallery gallery = new Gallery(); // objeto galeria para passarmos a model da partial View de cadastro de galerias.
 }
+
+<!-- A index de galria irá retornar os registros adicionados à tabela do banco de dados em uma tabela na aplicação que irá conter os dados percorridos e os botões de ação da View. Todas as modificações realizadas pelos botões serão realizadas via Partial Views que serão chamadas dentro de seus modais-->
 
 
 <div class="mt-2 p-2">
+
+    <!-- Botão que aciona o modal de cadastro de galerias -->
 
     <button asp-action="Register" class="btn btn-sm btn-outline-dark mt-4 mb-4" type="button" data-toggle="modal"
         data-target="#registerGallery" title="Criar galeria"><i class="bi bi-image-alt"></i> Nova Galeria </button>
@@ -34,7 +39,7 @@
 
                 <div class="modal-body p-0">
 
-                    <partial name="_Register" model="@gallery" />
+                    <partial name="_Register" model="@gallery" /> <!-- Chamada pa partial View do cadastro de galerias que recebe como model o objeto galeria -->
 
                 </div>
 
@@ -48,6 +53,8 @@
 
     @if (Model.Count() > 0)
     {
+        // Para cada galeria cadastrada será gerada uma linha na nossa tabela de forma dinâmica, para isso verificamos o número de registros e percorremos o modelo retornando os campos da tabela de acordo com as necesidades.
+
         <table class="table table-responsive table-bordered table-striped table-light table-hover table-gallery mb-4">
 
             <thead class="thead-dark">
@@ -65,20 +72,27 @@
             <tbody>
                 @foreach (var item in Model)
                 {
+                    // Percorrendo o modelo com foreach para obter o retorno dos campos da tabela
+
+                    // Os botões que acionam os modais precisam receber um data-target que representa o id passado na div modal, modais que contém formulários que validam os id's das suas models precisam também conter tanto no id do modal quanto no data-target que o aciona a carga da validação.
+
                     <tr>
-                        <td>@item.IdGallery.ToString("D6")</td>
-                        <td>@item.Title</td>
+                        <td>@item.IdGallery.ToString("D6")</td> <!--Id retornado no formato de string com 6 dígitos -->
+                        <td>@item.Title</td> <!-- Título da galeria -->
 
                         <td>
+                            <!-- Link para a Página de imagens da galeria -->
                             <a asp-action="Index" asp-controller="Image" class="btn btn-sm btn-outline-success"
                                 asp-route-id="@item.IdGallery" title="Adicionar Imagens"><i class="bi bi-images"></i></a>
 
+                            <!-- Botão que aciona o modal de edição da galeria -->
                             <button class="btn btn-sm btn-outline-secondary" type="button" data-toggle="modal"
-                        data-target="#upgradeGallery-@item.IdGallery" title="Editar galeria"><i
-                            class="bi bi-pencil"></i></button>
+                            data-target="#upgradeGallery-@item.IdGallery" title="Editar galeria"><i
+                            class="bi bi-pencil"></i></button> <!-- o data-target do botão que aciona o modal de atualização recebe o valor do id da div modal que irá acionar mais o valor da carga de validação "upgradeGallery-@item.IdGallery"-->
 
+                            <!-- Botão que aciona o modal de exclusão da galeria -->
                             <button class="btn btn-sm btn-outline-danger" type="button" data-toggle="modal"
-                        data-target="#deleteGallery-@item.IdGallery" title="Excluir galeria"><i
+                            data-target="#deleteGallery-@item.IdGallery" title="Excluir galeria"><i
                             class="bi bi-trash"></i></button>
                         </td>
 
@@ -87,7 +101,7 @@
                     <!--Start Upgrade Modal-->
 
                     <div class="modal fade" id="upgradeGallery-@item.IdGallery" tabindex="-1" role="dialog"
-                aria-labelledby="upgradeGalleryTitle" aria-hidden="true">
+                        aria-labelledby="upgradeGalleryTitle" aria-hidden="true"> <!-- o id do modal de atualização recebe o valor do data-target que o aciona seguido da carga de validação para o modal "upgradeGallery-@item.IdGallery"-->
 
                         <div class="modal-dialog modal-dialog-centered" role="document">
 
@@ -113,22 +127,6 @@
 
                             </div>
 
-
-                            <script>
-                                const inputImagem = document.querySelector('#ImageFile');
-                                inputImagem.addEventListener('change', (e) => {
-                                    var file = e.srcElement.files[0];
-                                    var img = document.querySelector('#currentImage');
-                                    var reader = new FileReader();
-                                    reader.onloadend = function () {
-                                        img.src = reader.result;
-                                    }
-
-                                    reader.readAsDataURL(file);
-                                })
-                            </script>
-
-
                         </div>
 
                     </div>
@@ -138,7 +136,7 @@
                     <!--Start Delete Modal-->
 
                     <div class="modal fade" id="deleteGallery-@item.IdGallery" tabindex="-1" role="dialog"
-                aria-labelledby="deleteGalleryTitle" aria-hidden="true">
+                        aria-labelledby="deleteGalleryTitle" aria-hidden="true">
 
                         <div class="modal-dialog modal-dialog-centered" role="document">
 
@@ -177,6 +175,8 @@
     }
     else
     {
+        // Caso nenhum registro seja encontrado uma div de aviso será retornada contendo a mensagem de que não há registros.
+
         <div class="alert alert-warning" role="alert">
             Nenhuma galeria cadastrada.
         </div>

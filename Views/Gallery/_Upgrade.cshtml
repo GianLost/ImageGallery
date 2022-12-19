@@ -2,13 +2,17 @@
 
 @{
     ViewData["Title"] = "Edição da Galeria de Imagem";
+
+    // A partial view que corresponde à atualização de galerias é idêntica à de cadastro de galerias, com a única diferença de que o formulário precisa conter de forma oculta o Id da galeria que será editada.
 }
+
+<!-- Partial View de Edição de Galerias -->
 
 <div class="mt-2 mb-2">
 
     <form asp-action="Upgrade" asp-controller="Gallery" method="post">
 
-        <input type="hidden" asp-for="IdGallery">
+        <input type="hidden" asp-for="IdGallery"> <!-- Id da galeria à ser editada -->
 
         <div class="form-group p-4">
 
@@ -27,3 +31,5 @@
     </form>
 
 </div>
+
+<!-- / Partial View de Edição de Galerias -->

@@ -1,7 +1,11 @@
 @model Gallery
 @{
     ViewData["Title"] = "Exclusão da Galeria de Imagens";
+
+    // A Partial View reponsável pela exclusão de galerias é igualmente simples, ela apenas sumeterá os dados via formulário para a ação de excluir da controladora de galerias.  view recebe em um campo oculto o valor do Id da galeria e nos botões excluir e cancelar passamos a string de decisão definida na controladora para controlarmos o retorno ao usuário de acordo com o valor da decisão.
 }
+
+<!-- Partial View de Exclusão de Galerias -->
 
 <div>
 
@@ -14,6 +18,9 @@
         </div>
 
         <div class="modal-footer">
+
+            <!-- Os botões excluir e cancelar ambos recebem a verificação de decisão para que seja controlado o retorno ao usuário -->
+
             <button class="btn btn-md btn-secondary" type="submit" name="decision" value="cancel" title="Cancelar"><i
                 class="bi bi-arrow-return-left"></i></button>
 
@@ -24,3 +31,5 @@
     </form>
 
 </div>
+
+<!-- / Partial View de Exclusão de Galerias -->

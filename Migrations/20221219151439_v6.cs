@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ImageGallery.Migrations
 {
-    public partial class v5 : Migration
+    public partial class v6 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
