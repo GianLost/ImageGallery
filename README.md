@@ -76,7 +76,7 @@
 
 <p>Ainda dentro do nosso arquivo <b>"Layout.cshtml"</b> precisamos passar a tag <b>"script"</b> que dará acesso aos arquivos JavaScript do light box 2, então vá até a linha anterior à linha de fechamento da sua tag body, ou na parte do seu código onde você está chamando pelos seus arquivos JavaScript e copie ou cole a seguinte referência dentro do parâmetro source de uma nova tag <b>"script"</b>: </p>
 
-<span>:inbox_tray:<b>Importando arquivos JavaScript do Light Box 2:</b> src="/lib/lightbox2/js/lightbox-plus-jquery.min.js" </span>
+<span><b>Importando arquivos JavaScript do Light Box 2:</b> src="/lib/lightbox2/js/lightbox-plus-jquery.min.js" </span>
 
 <p>Essas são todas as alterações que precisamos para o nosso arquivo <b>"Layout.cshtml"</b>, agora dando continuidade as configurações do nosso projeto precisamos criar três classes que implementarão nossos serviços de manipulação com imagens. Para que você tenha um maior auxílio você pode fazer o <b>"git clone"</b> ou <b>"git fork"</b> deste repositório e conferir os arquivos que serão citados aqui para que compreenda as alterações, ou simplesmente abrir estes arquivos pelo repositório remoto (todas as implementações de código estarão comentadas para um melhor entendimento).</p>
 
@@ -97,3 +97,13 @@
 <h2>:wrench: Criando e configurando a calsse de Contexto </h2>
 
 <p>Agora partimos para a criação e configuração da nossa classe de contexto que irá gerenciar nossas manipulações com banco de dados. Dentro do diretório <b>DataBase</b> já criado adicione um arquivo .cs que será o seu contexto, no nosso projeto nomeamos como <b>/DataBase/GalleryContext.cs</b> é dentro dele que implementaremos as configurações para nossa conexão com banco de dados. Aqui basicamente iremos configurar um string de conexão que será passada dentro do método OnConfiguring(), no método OnModelCreating() configuramos a nomenclatura das tabelas ao serem criadas e por fim precisamos instanciar nossas tabelas através de um DbSet<> que será o objeto reponsável por conter toda a carga de dados das nossas tabelas. <b>Confira o arquivo no repositório para ter acesso aos comentários de auxílio da implementação</b> .<p>
+
+<h2>:wrench: Criando e configurando as rotas e Views da aplicação </h2>
+
+<p>Por Fim, Para finalizarmos podemos criar nossas controladoras que serão responsáveis por fazer as requisições de rotas para nossas páginas de vizualização e a estrutura utilizada aqui foi a seguinte: No diretório <b>Views</b> precisamos criar outros dois diretórios que serão responsáveis pelas páginas de vizualização de galerias e imagens, para isso dentro de Views crie um diretório que será utilizado pelas galerias, no nosso projeto nomeado como <b>/Views/Gallery</b>, e um outro responsável pelas Imagens nomeado no nosso projeto como <b>/Views/Image</b>, dentro desses dois diretórios teremos todos os nossos arquivos de vizualização do nosso projeto, aqui utilizamos views e partial views para acessar a visualização das páginas, para compreender melhor basta abrir os diretórios no repositório e verificar os comentários de auxílio. Ainda no diretório de Views temos uma pequena implementação ná página Index de Home <b>(Views/Home/Index.cshtml)</b> que será a página responsável por mostar nossa vitrine com todas as galerias cadastradas e suas respectivas imagens, confira também o arquivo comentado no nosso repositório.<p>
+
+</br>
+
+<h3>Controllers: </h3>
+
+<p>Como já foi dito as controllers são responsáveis por tratar as nossas requisições para que retornem a vizualização das nossas páginas, para isso precisamos agora de dois arquivos Controlladores nomeados no projeto respectivamente como <b>/Controllers/GalleryController.cs</b> e <b>/Controllers/ImageController.cs</b>, nestes dois arquivos se encontram os códigos que tratam e validam as requisições para que possamos retornar as devidas páginas de vizualização, e ainda dentro das controllers no nosso arquivo <b>/Controllers/HomeController.cs</b>, precisamos alterar o nosso método Index para que este exiba nossa vitrine conforme foi implementado na nossa <b>/Views/Home/Index.cshtml</b> como já foi dito por aqui para facilitar você pode acessar os arquivos no repositório e conferir os comentários de auxílio.<p>
