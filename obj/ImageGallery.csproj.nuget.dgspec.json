@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ufo\\Desktop\\ImageGallery\\ImageGallery.csproj": {}
+    "D:\\Workspace\\ImageGallery\\ImageGallery.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ufo\\Desktop\\ImageGallery\\ImageGallery.csproj": {
+    "D:\\Workspace\\ImageGallery\\ImageGallery.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ufo\\Desktop\\ImageGallery\\ImageGallery.csproj",
+        "projectUniqueName": "D:\\Workspace\\ImageGallery\\ImageGallery.csproj",
         "projectName": "ImageGallery",
-        "projectPath": "C:\\Users\\Ufo\\Desktop\\ImageGallery\\ImageGallery.csproj",
+        "projectPath": "D:\\Workspace\\ImageGallery\\ImageGallery.csproj",
         "packagesPath": "C:\\Users\\Ufo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ufo\\Desktop\\ImageGallery\\obj\\",
+        "outputPath": "D:\\Workspace\\ImageGallery\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ufo\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NXke8bXTIHsz2gbjkEjD4V4I3gPtSu701IInwwuCuOqNovYntxfbsnfZGVGP4/yq5zTMxrpAXndFyDpYCDZgsg==",
+  "dgSpecHash": "Zbw6oY5T7p3VTgzR4xdrKap5A/eXnbK8jcHzaBkQoCeCxsDMfarlyjacUTkdCv73bvqw3qZepya9q6jU83XeOQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Ufo\\Desktop\\ImageGallery\\ImageGallery.csproj",
+  "projectFilePath": "D:\\Workspace\\ImageGallery\\ImageGallery.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ufo\\.nuget\\packages\\microsoft.csharp\\4.6.0\\microsoft.csharp.4.6.0.nupkg.sha512",
     "C:\\Users\\Ufo\\.nuget\\packages\\microsoft.entityframeworkcore\\3.0.0\\microsoft.entityframeworkcore.3.0.0.nupkg.sha512",
