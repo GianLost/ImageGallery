@@ -1,0 +1,48 @@
+@model Image
+@{
+    ViewData["Title"] = "Cadastro de Imagens";
+}
+
+<div class="p-3">
+
+    <form method="post" enctype="multipart/form-data">
+
+        <input type="hidden" asp-for="@Model.IdGallery" />
+
+        <div class="form-group mt-3">
+            <input placeholder="Título da Imagem" class="form-control img-input" asp-for="@Model.ImageTitle" />
+            <span class="text-danger" asp-validation-for="@Model.ImageTitle"></span>
+        </div>
+
+        <div class="form-group offset-md-4 mt-3  img-circle">
+            <img src="@Model.imagePath" class="img-thumbnail" id="currentImage">
+        </div>
+
+        <div class="form-group mt-3">
+            <input asp-for="@Model.ImageFile" accept="image/*" />
+            <span class="text-danger" asp-validation-for="@Model.ImageFile"></span>
+        </div>
+
+        <div class="mt-3">
+            <a asp-action="Index" asp-controller="Image" asp-route-id="@Model.IdGallery"
+                class="btn btn-secondary">Cancelar</a>
+            <button class="btn btn-primary" type="submit">Salvar</button>
+        </div>
+    </form>
+
+</div>
+@section Scripts {
+<script>
+    const inputImagem = document.querySelector('#ImageFile');
+    inputImagem.addEventListener('change', (e) => {
+        var file = e.srcElement.files[0];
+        var img = document.querySelector('#currentImage');
+        var reader = new FileReader();
+        reader.onloadend = function () {
+            img.src = reader.result;
+        }
+
+        reader.readAsDataURL(file);
+    })
+</script>
+}

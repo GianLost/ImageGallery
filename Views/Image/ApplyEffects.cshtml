@@ -1,0 +1,55 @@
+@model Image
+@{
+    ViewData["Title"] = $"Aplicar Efeito às imagens";
+}
+
+<form asp-action="ApplyEffects" method="post">
+
+    <input type="hidden" name="id" value="@Model.IdImage" />
+
+    <div class="form-group mt-3">
+        <img src="@Model.imagePath" class="img-thumbnail" width="300" id="currentImage">
+    </div>
+
+    <div class="form-group mt-3">
+
+        <button class="btn btn-sm btn-success" asp-route-effects="rr" asp-action="ApplyEffects"
+            title="Rotacionar à direita"><i class="bi bi-arrow-clockwise"></i></button>
+
+        <button class="btn btn-sm btn-success" asp-route-effects="rl" asp-action="ApplyEffects"
+            title="Rotacionar à esquerda"><i class="bi bi-arrow-counterclockwise"></i></button>
+
+        <button class="btn btn-sm btn-success" asp-route-effects="ih" asp-action="ApplyEffects"
+            title="inverter horizontalmente"><i class="bi bi-arrow-left-right"></i></button>
+
+        <button class="btn btn-sm btn-success" asp-route-effects="iv" asp-action="ApplyEffects"
+            title="inverter verticalmente"><i class="bi bi-arrow-down-up"></i></button>
+
+        <button class="btn btn-sm btn-dark" asp-route-effects="gs" asp-action="ApplyEffects" title="Escala de cinza"><i
+                class="bi bi-image-alt"></i></button>
+
+        <button class="btn btn-sm btn-dark" asp-route-effects="sp" asp-action="ApplyEffects" title="Sépia"><i
+                class="bi bi-funnel"></i></button>
+
+        <button class="btn btn-sm btn-dark" asp-route-effects="ng" asp-action="ApplyEffects" title="Negativo"><i
+                class="bi bi-file-image-fill"></i></button>
+
+        <button class="btn btn-sm btn-dark" asp-route-effects="df" asp-action="ApplyEffects" title="Desfoque"><i
+                class="bi bi-eraser"></i></button>
+
+    </div>
+
+    <div class="form-group mt-3">
+        <a asp-action="Index" asp-route-id="@Model.IdGallery" class="btn btn-secondary">Voltar para a Galeria</a>
+    </div>
+
+    @section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function (e) {
+            var img = document.querySelector('#currentImage');
+            img.src = img.src + '?' + new Date().getTime();
+        });
+    </script>
+    }
+
+</form>

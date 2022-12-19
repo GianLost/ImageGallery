@@ -26,7 +26,7 @@ namespace ImageGallery.Controllers
                     // Na nossa página index de galerias teremos a listagem das galerias cadastradas e as ações de CRUD para as galerias de imagens
 
                     var gallery = dataBase.Galerias.AsNoTracking().ToList();
-                    
+
                     return View(gallery);
                 }
             }
@@ -168,27 +168,40 @@ namespace ImageGallery.Controllers
         }
 
         [HttpPost, ValidateAntiForgeryToken]
-        [ActionName("Delete")]
-        public IActionResult DeleteGallery(int? id)
+        public IActionResult Delete(string decision, Gallery galleryObject)
         {
             try
             {
                 using (GalleryContext dataBase = new GalleryContext())
                 {
 
-                    var gallery = dataBase.Galerias.Find(id);
-
-                    if (gallery == null)
+                    switch (decision)
                     {
-                        return NotFound();
+                        case "delete":
+
+                            if (galleryObject.IdGallery != 0)
+                            {
+
+                                dataBase.Galerias.Remove(galleryObject);
+                                dataBase.SaveChanges();
+                                return RedirectToAction("Index", "Gallery");
+
+                            }
+
+                            break;
+
+                        case "cancel":
+
+                            if (galleryObject.IdGallery != 0)
+                            {
+                                return RedirectToAction("Index", "Gallery");
+                            }
+
+                            break;
                     }
 
-                    dataBase.Galerias.Remove(gallery);
-                    dataBase.SaveChanges();
-                    return RedirectToAction("Index");
-
+                    return View(galleryObject);
                 }
-
             }
             catch (Exception e)
             {

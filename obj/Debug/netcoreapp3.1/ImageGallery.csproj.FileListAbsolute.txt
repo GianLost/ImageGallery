@@ -59,6 +59,11 @@ C:\Users\Ufo\Desktop\ImageGallery\bin\Debug\netcoreapp3.1\Pomelo.EntityFramework
 C:\Users\Ufo\Desktop\ImageGallery\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 C:\Users\Ufo\Desktop\ImageGallery\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Index.cshtml.g.cs
-C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Register.cshtml.g.cs
-C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Upgrade.cshtml.g.cs
-C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\Delete.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\_Delete.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\_Register.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Gallery\_Upgrade.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Image\Index.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Image\Update.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Image\_Delete.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Image\Register.cshtml.g.cs
+C:\Users\Ufo\Desktop\ImageGallery\obj\Debug\netcoreapp3.1\Razor\Views\Image\ApplyEffects.cshtml.g.cs

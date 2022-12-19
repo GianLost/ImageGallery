@@ -1,0 +1,31 @@
+@model Gallery
+
+@{
+    ViewData["Title"] = "Cadastro de Galerias de Imagem";
+}
+
+<div>
+
+    <p class="card-text p-4 m-0">Aqui você pode criar sua galeria e adicionar imagens via upload!</p>
+
+    <form asp-action="Register" asp-controller="Gallery" method="post">
+
+        <div class="form-group p-2 m-0">
+
+            <input class="form-control mb-2 img-input" placeholder="Cadastrar Galeria" asp-for="@Model.Title" />
+            <span class="text-danger mb-2" asp-validation-for="@Model.Title"></span>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <a asp-action="Index" class="btn btn-sm btn-secondary" title="Cancelar"><i
+                class="bi bi-arrow-return-left"></i> </a>
+            <button class="btn btn-sm btn-primary" type="submit" title="Salvar"><i
+                class="bi bi-folder-plus"></i></button>
+
+        </div>
+
+    </form>
+
+</div>

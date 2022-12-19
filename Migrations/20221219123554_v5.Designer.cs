@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ImageGallery.Migrations
 {
     [DbContext(typeof(GalleryContext))]
-    [Migration("20221217061311_g1")]
-    partial class g1
+    [Migration("20221219123554_v5")]
+    partial class v5
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

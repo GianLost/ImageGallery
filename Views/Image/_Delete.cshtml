@@ -1,0 +1,24 @@
+@model Image
+@{
+    ViewData["Title"] = "Exclusão de Imagens";
+}
+
+<div>
+
+    <form asp-action="Delete" asp-controller="Image" method="post">
+
+        <input type="hidden" name="id" asp-for="@Model.IdImage">
+
+        <div class="p-5">
+            <span>Tem certeza que deseja excluir a Imagem <b>@Model.ImageTitle</b>?</span>
+        </div>
+
+        <div class="modal-footer">
+            <a asp-action="Index" asp-controller="Image" asp-route-id="@Model.IdGallery"
+                class="btn btn-md btn-secondary"><i class="bi bi-arrow-return-left"></i></a>
+            <button class="btn btn-md btn-danger" type="submit"><i class="bi bi-trash"></i></button>
+        </div>
+
+    </form>
+
+</div>

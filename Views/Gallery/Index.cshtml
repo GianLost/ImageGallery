@@ -2,18 +2,55 @@
 
 @{
     ViewData["Title"] = "Galeria de Imagens";
+    Gallery gallery = new Gallery();
 }
 
 
-<div class="mt-5 p-2">
+<div class="mt-2 p-2">
 
-    <a asp-action="Register" class="btn btn-outline-dark mt-4 mb-4"><i class="bi bi-image-alt"></i> Nova Galeria</a>
+    <button asp-action="Register" class="btn btn-sm btn-outline-dark mt-4 mb-4" type="button" data-toggle="modal"
+        data-target="#registerGallery" title="Criar galeria"><i class="bi bi-image-alt"></i> Nova Galeria </button>
+
+    <!--Start Register Modal-->
+
+    <div class="modal fade" id="registerGallery" tabindex="-1" role="dialog" aria-labelledby="registerGalleryTitle"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h4 class="mb-0">Criar Galeria</h4>
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                        <span aria-hidden="true">&times;</span>
+
+                    </button>
+
+                </div>
+
+                <div class="modal-body p-0">
+
+                    <partial name="_Register" model="@gallery" />
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--Finish Register Modal-->
 
     @if (Model.Count() > 0)
     {
-        <table class="table table-responsive table-bordered table-striped table-dark tabela-galerias">
+        <table class="table table-responsive table-bordered table-striped table-light table-hover table-gallery mb-4">
 
-            <thead>
+            <thead class="thead-dark">
 
                 <tr>
 
@@ -31,15 +68,108 @@
                     <tr>
                         <td>@item.IdGallery.ToString("D6")</td>
                         <td>@item.Title</td>
+
                         <td>
                             <a asp-action="Index" asp-controller="Image" class="btn btn-sm btn-outline-success"
-                        asp-route-id="@item.IdGallery"><i class="bi bi-images" title="Imagens da galeria"></i></a>
-                            <a asp-action="Upgrade" class="btn btn-sm btn-outline-secondary" asp-route-id="@item.IdGallery"><i
-                            class="bi bi-pencil" title="Alterar galeria"></i></a>
-                            <a asp-action="Delete" class="btn btn-sm btn-outline-danger" asp-route-id="@item.IdGallery"><i
-                            class="bi bi-trash" title="Excluir galeria"></i></a>
+                                asp-route-id="@item.IdGallery" title="Adicionar Imagens"><i class="bi bi-images"></i></a>
+
+                            <button class="btn btn-sm btn-outline-secondary" type="button" data-toggle="modal"
+                        data-target="#upgradeGallery-@item.IdGallery" title="Editar galeria"><i
+                            class="bi bi-pencil"></i></button>
+
+                            <button class="btn btn-sm btn-outline-danger" type="button" data-toggle="modal"
+                        data-target="#deleteGallery-@item.IdGallery" title="Excluir galeria"><i
+                            class="bi bi-trash"></i></button>
                         </td>
+
                     </tr>
+
+                    <!--Start Upgrade Modal-->
+
+                    <div class="modal fade" id="upgradeGallery-@item.IdGallery" tabindex="-1" role="dialog"
+                aria-labelledby="upgradeGalleryTitle" aria-hidden="true">
+
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+
+                                    <h4 class="mb-0">Editar Galeria</h4>
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                        <span aria-hidden="true">&times;</span>
+
+                                    </button>
+
+                                </div>
+
+                                <div class="modal-body p-0">
+
+                                    <partial name="_Upgrade" model="@item" />
+
+                                </div>
+
+                            </div>
+
+
+                            <script>
+                                const inputImagem = document.querySelector('#ImageFile');
+                                inputImagem.addEventListener('change', (e) => {
+                                    var file = e.srcElement.files[0];
+                                    var img = document.querySelector('#currentImage');
+                                    var reader = new FileReader();
+                                    reader.onloadend = function () {
+                                        img.src = reader.result;
+                                    }
+
+                                    reader.readAsDataURL(file);
+                                })
+                            </script>
+
+
+                        </div>
+
+                    </div>
+
+                    <!--Finish Upgrade Modal-->
+
+                    <!--Start Delete Modal-->
+
+                    <div class="modal fade" id="deleteGallery-@item.IdGallery" tabindex="-1" role="dialog"
+                aria-labelledby="deleteGalleryTitle" aria-hidden="true">
+
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+
+                                    <h3 class="modal-title text-danger text-center mb-0 p-0" id="deleteGalleryTitle">
+                                        Alerta!</h3>
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+                                        <span aria-hidden="true">&times;</span>
+
+                                    </button>
+
+                                </div>
+
+                                <div class="modal-body p-0">
+
+                                    <partial name="_Delete" model="@item" />
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--Finish Delete Modal-->
                 }
             </tbody>
 

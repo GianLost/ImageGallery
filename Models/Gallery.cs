@@ -3,12 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ImageGallery.Models
 {
-    public class Gallery
-    {
+    public class Gallery{
 
         [Key]
         public int IdGallery { get; set; } // Chave primária da nossa tabela Galeria
-
+        
         [Required]
         [Display(Name = "Gallery Title")]
         public string Title { get; set; } // Título

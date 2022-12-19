@@ -1,6 +1,5 @@
 using System;
 using ImageGallery.Services;
-using ImageGallery.DataBase;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -23,7 +22,6 @@ namespace ImageGallery
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         [Obsolete]
         public void ConfigureServices(IServiceCollection services)
         {
@@ -48,7 +46,7 @@ namespace ImageGallery
                 }).Configure<PhysicalFileSystemCacheOptions>(options =>
                 {
                     options.CacheFolder = "img/cache"; // Configura a pasta que armazenará as imagens em cache
-                });
+            });
 
             services.AddSingleton<IFileProcessor, FileProcessorService>(); //Adicionando a interface que Implementamos para a manipulação das imgens de upload
 
@@ -57,7 +55,7 @@ namespace ImageGallery
 
         // Use este método para configurar as requisições HTTP do Pipeline.
 
-        //Crie um objeto de IWbHostEnviroment para realizar requisições arquivos e o adicione como paramêtro no metodo Configure(), crie também um ojeto de ILoggerFactory para utilizar a ferramenta de geração de logs e passe-o também como parâmetro ao metodo Configure();
+        //Crie um objeto de IWbHostEnviroment para realizar requisições de arquivos e o adicione como paramêtro no metodo Configure(), crie também um ojeto de ILoggerFactory para utilizar a ferramenta de geração de logs e passe-o também como parâmetro ao metodo Configure();
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory logFac)
         {

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Linq;
+using ImageGallery.DataBase;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace ImageGallery.Controllers
@@ -14,7 +17,11 @@ namespace ImageGallery.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            using (GalleryContext dataBase = new GalleryContext())
+            {
+                var gallery = dataBase.Galerias.Include(gallery => gallery.Images).AsNoTracking().ToList();
+                return View(gallery);
+            }
         }
 
 

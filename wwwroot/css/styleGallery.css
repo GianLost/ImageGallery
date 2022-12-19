@@ -1,10 +1,30 @@
-.tabela-galerias tr>th:first-child,
-.tabela-galerias tr>td:first-child,
-.tabela-galerias tr>th:last-child,
-.tabela-galerias tr>td:last-child
-{
+.table-gallery, .table-images td:hover {
+  cursor: pointer;
+  background-color: #007bff0d;
+}
+
+.table-images tr>th:first-child,
+.table-images tr>td:first-child,
+.table-images tr>th:nth-child(2),
+.table-images tr>td:nth-child(2),
+.table-images tr>th:last-child,
+.table-images tr>td:last-child,
+.table-gallery tr > th:first-child,
+.table-gallery tr > td:first-child,
+.table-gallery tr > th:last-child,
+.table-gallery tr > td:last-child {
   width: 1%;
   white-space: nowrap;
   text-align: center;
-
 }
+
+.img-circle img{
+  width: 50%;
+  height: 50%;
+  border-radius: 30px;
+}
+
+.img-input::placeholder {
+  font-style: italic;
+}
+

@@ -27,7 +27,7 @@
 
     <header>
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-toggleable-sm navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-toggleable-md navbar-toggleable-sm navbar-dark bg-dark">
             <div class="container">
 
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ImageGallery</a>
@@ -95,6 +95,12 @@
 
     <!-- Tag script para utilização da Ferramenta LightBox 2 -->
     <script src="/lib/lightbox2/js/lightbox-plus-jquery.min.js" asp-append-version="true"></script>
+
+    <script asp-append-version="true">
+        lightbox.option({
+            'albumLabel' : 'Imagem %1 de %2'
+        });
+    </script>
 
 </body>
 </html>

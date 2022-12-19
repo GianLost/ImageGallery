@@ -1,0 +1,29 @@
+@model Gallery
+
+@{
+    ViewData["Title"] = "Edição da Galeria de Imagem";
+}
+
+<div class="mt-2 mb-2">
+
+    <form asp-action="Upgrade" asp-controller="Gallery" method="post">
+
+        <input type="hidden" asp-for="IdGallery">
+
+        <div class="form-group p-4">
+
+            <input class="form-control" placeholder="Cadastrar Galeria" asp-for="@Model.Title" />
+            <span class="text-danger" asp-validation-for="@Model.Title"></span>
+
+        </div>
+
+        <div class="modal-footer p-2">
+
+            <a asp-action="Index" class="btn btn-md btn-secondary" title="Cancelar"><i class="bi bi-arrow-return-left"></i> </a>
+            <button class="btn btn-md btn-primary" type="submit" title="Editar"><i class="bi bi-pencil"></i> </button>
+
+        </div>
+
+    </form>
+
+</div>
