@@ -39,17 +39,18 @@
 <b><h2>:floppy_disk:  Instalando pacotes de dependências para utilizar banco de dados MySql: </h2></b>
 
 <span><b>Cole no Terminal: </b> dotnet add package Pomelo.EntityFrameworkCore.MySql --version 3.0.0 </span>
+</br>
 <span><b>Cole no Terminal: </b> dotnet add package Pomelo.EntityFrameworkCore.Design --version 3.0.0 </span>
 
-<h1> Configurações do Projeto</h1>
+<h1>:wrench: Configurações do Projeto</h1>
 
 <p> Com todas as ferramentas e suas dependências devidamente instaladas podemos prosseguir para a configuração essencial do projeto, para isso precisamos seguir alguns passos que são primordias para que tudo funcione corretamente. Então vamos lá</p>
 
 <h2>Estruturando o projeto</h2>
 
-<p>Nosso projeto foi criado na estrutura MVC contendo as pastas Models, Viewa e Controllers, mas ainda precisamos implementar mais três pastas para organizar nosso projeto a fim de deixá-lo mais bem estruturado. A primeira pasta que precisamos é a que irá conter nosso modelo de contexto para o banco de dados, para isso crie a pasta "Data" (sem aspas) digitando o seguinte comando no seu terminal já estando dentro do diretório do projeto: </p>
+<p>Nosso projeto foi criado na estrutura MVC contendo as pastas Models, Viewa e Controllers, mas ainda precisamos implementar mais três pastas para organizar nosso projeto a fim de deixá-lo mais bem estruturado. A primeira pasta que precisamos é a que irá conter nosso modelo de contexto para o banco de dados, para isso crie a pasta "DataBase" (sem aspas) digitando o seguinte comando no seu terminal já estando dentro do diretório do projeto: </p>
 
-<span><b>Cole no Terminal: </b> mkdir Data</span>
+<span><b>Cole no Terminal: </b> mkdir DataBase</span>
 
 <p>Agora precisamos cirar nosso diretório de serviços, para isso digite ou cole o seguinte comando no seu terminal já estando dentro do diretório do projeto: </p>
 
@@ -77,7 +78,7 @@
 
 <span>:inbox_tray:<b>Importando arquivos JavaScript do Light Box 2:</b> src="/lib/lightbox2/js/lightbox-plus-jquery.min.js" </span>
 
-<p>Essas são todas as alterações que precisamos para o nosso arquivo <b>"Layout.cshtml"</b>, agora dando continuidade as configurações do nosso projeto precisamos criar três classes que implementarão nossos serviços de manipulação com imagens. Para que você tenha um maior auxílio você pode fazer o <b>"git clone"</b> deste repositório e conferir os arquivos que serão citados aqui para que compreenda as alterações, ou simplesmente abrir estes arquivos pelo repositório remoto (todas as implementações de código estarão comentadas para um melhor entendimento).</p>
+<p>Essas são todas as alterações que precisamos para o nosso arquivo <b>"Layout.cshtml"</b>, agora dando continuidade as configurações do nosso projeto precisamos criar três classes que implementarão nossos serviços de manipulação com imagens. Para que você tenha um maior auxílio você pode fazer o <b>"git clone"</b> ou <b>"git fork"</b> deste repositório e conferir os arquivos que serão citados aqui para que compreenda as alterações, ou simplesmente abrir estes arquivos pelo repositório remoto (todas as implementações de código estarão comentadas para um melhor entendimento).</p>
 
 <h2>:wrench: Configurações da Classe <b>Startup.cs</b> </h2>
 
@@ -91,4 +92,8 @@
 
 <p>Com as classes de serviços implementadas podemos prosseguir para nossas classes modelo que definirão os atributos dos nossos objetos e a estrutura de geração das nossas tabelas do banco de dados que será gerado através das classes modelos como estamos utilizando o Entity Framework Core.</p>
 
-<p>Utilizaremos aqui duas classes nomeadas no nosso projeto como <b>/Models/Gallery.cs</b> e <b>/Models/Image.cs</b> elas serão responsáveis por conter os atributos dos objetos que irão representar, confira o os respectivos arquivos no repositório para verfificar os comentários de auxílio da implementação.</p>
+<p>Utilizaremos aqui duas classes nomeadas no nosso projeto como <b>/Models/Gallery.cs</b> e <b>/Models/Image.cs</b> elas serão responsáveis por conter os atributos dos objetos que irão representar, confira os respectivos arquivos no repositório para verfificar os comentários de auxílio da implementação.</p>
+
+<h2>:wrench: Criando e configurando a calsse de Contexto </h2>
+
+<p>Agora partimos para a criação e configuração da nossa classe de contexto que irá gerenciar nossas manipulações com banco de dados. Dentro do diretório <b>DataBase</b> já criado adicione um arquivo .cs que será o seu contexto, no nosso projeto nomeamos como <b>/DataBase/GalleryContext.cs</b> é dentro dele que implementaremos as configurações para nossa conexão com banco de dados. Aqui basicamente iremos configurar um string de conexão que será passada dentro do método OnConfiguring(), no método OnModelCreating() configuramos a nomenclatura das tabelas ao serem criadas e por fim precisamos instanciar nossas tabelas através de um DbSet<> que será o objeto reponsável por conter toda a carga de dados das nossas tabelas. <b>Confira o arquivo no repositório para ter acesso aos comentários de auxílio da implementação</b> .<p>
