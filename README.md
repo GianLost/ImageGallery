@@ -105,3 +105,6 @@
 <h3>Controllers: </h3>
 
 <p>Como já foi dito as controllers são responsáveis por tratar as nossas requisições para que retornem a vizualização das nossas páginas, para isso precisamos agora de dois arquivos Controlladores nomeados no projeto respectivamente como <b>/Controllers/GalleryController.cs</b> e <b>/Controllers/ImageController.cs</b>, nestes dois arquivos se encontram os códigos que tratam e validam as requisições para que possamos retornar as devidas páginas de vizualização, e ainda dentro das controllers no nosso arquivo <b>/Controllers/HomeController.cs</b>, precisamos alterar o nosso método Index para que este exiba nossa vitrine conforme foi implementado na nossa <b>/Views/Home/Index.cshtml</b> como já foi dito por aqui para facilitar você pode acessar os arquivos no repositório e conferir os comentários de auxílio.<p>
+
+<p>Pois Bem, com isso temos toda a nossa estrutura e configurações necessárias para a aplicação.Lembre que todas as dúvidas poderão ser esclarecidadas ao vereficar os arquivos comentados dentro do nosso repositótio. Vamos ficando por aqui... Ate mais :raising_hand:<p>
+
